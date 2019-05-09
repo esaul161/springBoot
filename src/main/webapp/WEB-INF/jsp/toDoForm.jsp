@@ -1,39 +1,57 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
-<head></head>
+<head>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+   <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+     <style>
+    div{
+     padding-bottom: 25px;
+    }
+     </style>
+</head>
 <body>
-form todo
+<h1>Alta Tarea Nueva</h1>
 
 <form:form method="post" modelAttribute="ToDo">
-		<table>
+		<table class="table">
                   <tr>
-                      <td>Id:</td>
-                      <td><form:input path="id" type="number"/></td>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Id:</span>
+                    <form:input type="number" path="id" class="form-control" placeholder="Username" aria-describedby="basic-addon1" />
+                  </div>
                   </tr>
                   <tr>
-                      <td>Usuario:</td>
-                      <td><form:input path="user" type="Text"/></td>
+                  <div class="input-group">
+                                      <span class="input-group-addon" id="basic-addon1">Usuario:</span>
+                                      <form:input type="text" path="user" class="form-control" placeholder="Usuario" aria-describedby="basic-addon1" />
+                                    </div>
                   </tr>
                   <tr>
-                         <td>Descripción:</td>
-                         <td><form:input path="desc" type="text" /></td>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Descripción:</span>
+                            <form:input type="text" path="desc" class="form-control" placeholder="Descripción" aria-describedby="basic-addon1" />
+                         </div>
                   </tr>
                   <tr>
-                      <td>Fecha:</td>
-                      <td><form:input path="targetDate" type="date"/></td>
+                  <div class="input-group">
+                       <span class="input-group-addon" id="basic-addon1">Fecha:</span>
+                       <form:input type="date" path="targetDate" class="form-control" placeholder="Fecha" aria-describedby="basic-addon1" />
+                   </div>
                    </tr>
                    <tr>
-                   <td>Estatus:</td>
-                   <td>
-                   <form:select path="isDone">
+                   <div class="input-group">
+                   <span class="input-group-addon" id="basic-addon1">Estatus:</span>
+                   <form:select path="isDone" class="form-control">
                       <form:option value="true" label="Completa" />
                       <form:option value="false" label="Incompleta" />
                    </form:select>
-                   </td>
+                   </div>
                    </tr>
                    <tr>
-                   <button type="submit">Enviar</button>
+                   <button type="submit" class="btn btn-primary mb-2">Enviar</button>
                    </tr>
               </table>
 	</form:form>
